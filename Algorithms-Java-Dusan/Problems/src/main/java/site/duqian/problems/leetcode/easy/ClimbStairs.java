@@ -48,6 +48,6 @@ public class ClimbStairs {
         if (n <= 2) {
             return n;
         }
-        return climbStairs(n - 1) + climbStairs(n - 2);
+        return climbStairs2(n - 1) + climbStairs2(n - 2);
     }
 }

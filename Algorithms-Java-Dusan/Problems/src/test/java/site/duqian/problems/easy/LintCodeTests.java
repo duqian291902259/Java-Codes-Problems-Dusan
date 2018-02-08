@@ -20,6 +20,7 @@ import site.duqian.problems.lintcode.easy.Flatten22;
 import site.duqian.problems.lintcode.easy.InsertInterval;
 import site.duqian.problems.lintcode.easy.MajorityNumber;
 import site.duqian.problems.lintcode.easy.MergeSortedArray;
+import site.duqian.problems.lintcode.easy.MinTotalOfTriangle;
 import site.duqian.problems.lintcode.easy.NodeListReverse;
 import site.duqian.problems.lintcode.easy.ProductExcludeItself;
 import site.duqian.problems.lintcode.easy.RecoverRotatedSortedArray;
@@ -41,6 +42,17 @@ public class LintCodeTests {
     @Before
     public void setUp() throws Exception {
 
+    }
+
+    @Test
+    public void minimumTotal() throws Exception {
+        MinTotalOfTriangle demo = new MinTotalOfTriangle();
+        int[] A = new int[]{1};
+        int[] B = new int[]{2, 3};
+        int[] C = new int[]{1, 2, 3};
+        int[][] triangle = new int[][]{A,B,C};
+        int minPathSum = demo.minimumTotal(triangle);
+        System.out.println("minPathSum=" + minPathSum);
     }
 
     @Test
