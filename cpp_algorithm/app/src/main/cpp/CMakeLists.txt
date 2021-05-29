@@ -3,12 +3,37 @@
 
 # Sets the minimum version of CMake required to build the native library.
 
-cmake_minimum_required(VERSION 3.10.2)
+#cmake_minimum_required(VERSION 3.10.2)
+cmake_minimum_required(VERSION 3.4.1)
 
 # Declares and names the project.
 
 project("cpp_algorithm")
 
+# 支持C++11标准和GNU扩展特性
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+
+# 1. 定义so库和头文件所在目录，方面后面使用
+set(jnilibs ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
+
+include_directories(
+        include
+        easy
+        medium
+        hard
+        util
+)
+
+# Creates and names a library, sets it as either STATIC
+# or SHARED, and provides the relative paths to its source code.
+# You can define multiple libraries, and CMake builds them for you.
+# Gradle automatically packages shared libraries with your APK.
+file(GLOB src-files
+        ${CMAKE_SOURCE_DIR}/*.cpp
+        ${CMAKE_SOURCE_DIR}/easy/*.cpp
+        ${CMAKE_SOURCE_DIR}/medium/*.cpp
+        ${CMAKE_SOURCE_DIR}/util/*.cpp
+        ${CMAKE_SOURCE_DIR}/hard/*.cpp)
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
@@ -21,6 +46,7 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
+             ${src-files}
              native-lib.cpp )
 
 # Searches for a specified prebuilt library and stores the path as a
