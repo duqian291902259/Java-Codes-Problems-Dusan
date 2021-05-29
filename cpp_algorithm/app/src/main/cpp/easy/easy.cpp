@@ -20,7 +20,7 @@ vector<int> easy::twoSum(vector<int> &nums, int target) {
 vector<int> easy::twoSum2(vector<int> &nums, int target) {
     unordered_map<int, int> map;
     for (int i = 0; i < nums.size(); ++i) {
-        auto find = map.find(target - i);
+        auto find = map.find(target - nums[i]);
         if (find != map.end()) {
             return {find->second, i};
         }
