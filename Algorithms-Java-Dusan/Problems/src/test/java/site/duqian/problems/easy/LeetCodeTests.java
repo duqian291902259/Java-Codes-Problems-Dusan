@@ -10,6 +10,7 @@ import site.duqian.problems.TreeNode;
 import site.duqian.problems.leetcode.easy.BinaryAdd67;
 import site.duqian.problems.leetcode.easy.ClimbStairs;
 import site.duqian.problems.leetcode.easy.CountAndSay38;
+import site.duqian.problems.leetcode.easy.ExcelSheetColumnTitle168;
 import site.duqian.problems.leetcode.easy.FindSingleNumber;
 import site.duqian.problems.leetcode.easy.ImplementStr;
 import site.duqian.problems.leetcode.easy.IsHeightBalancedTree;
@@ -50,6 +51,13 @@ public class LeetCodeTests {
         FindSingleNumber demo = new FindSingleNumber();
         int num = demo.singleNumber(new int[]{11, 11, 2});
         System.out.println("singleNumber=" + num);
+    }
+
+    @Test
+    public void convertToTitle() throws Exception {
+        ExcelSheetColumnTitle168 demo = new ExcelSheetColumnTitle168();
+        String title = demo.convertToTitle(52);
+        System.out.println("title=" + title);
     }
 
     @Test
