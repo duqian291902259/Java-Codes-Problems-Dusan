@@ -10,7 +10,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Example of a call to a native method
-        findViewById<TextView>(R.id.sample_text).text = stringFromJNI()
+        val textView = findViewById<TextView>(R.id.sample_text)
+        textView.text = stringFromJNI()
+        textView.setOnClickListener{
+            textView.text = stringFromJNI()
+        }
     }
 
     /**
