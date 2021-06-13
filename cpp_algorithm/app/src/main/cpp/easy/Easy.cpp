@@ -30,21 +30,20 @@ vector<int> Easy::twoSum2(vector<int> &nums, int target) {
 }
 
 int Easy::reverse(int32_t x) {
-    //int flag = x < 0 ? -1 : 1;
     long sum = 0;
-    LOGI(TAG, "sum=%d", sum)
     while (x) {
-        //if ((flag == -1 && (INT_MIN / 10 > sum)) || (flag == 1 && INT_MAX / 10 < sum))return 0;
-        /*if ((flag == -1 && (INT32_MIN / 10 > num)) || (flag == 1 && INT32_MAX / 10 < num)) {
-            return 0;
-        }*/
         sum = sum * 10 + x % 10;
         x /= 10;
-        LOGI(TAG, "sum=%d", sum)
     }
     return (sum > INT_MAX || sum < INT_MIN) ? 0 : sum;
 }
 
-int Easy::add(int a, int b) {
-    return a + b;
+bool Easy::isPalindrome(int x) {
+    if (x < 0) {
+        return false;
+    }
+    int result = Easy::reverse(x);
+    LOGI(TAG, "easy_test reverse %d, %d", x, result)
+
+    return x == result;
 }

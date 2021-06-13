@@ -31,6 +31,7 @@ include_directories(
 file(GLOB src-files
         ${CMAKE_SOURCE_DIR}/*.cpp
         ${CMAKE_SOURCE_DIR}/easy/*.cpp
+        #${CMAKE_SOURCE_DIR}/easy/EasyTest.cpp
         ${CMAKE_SOURCE_DIR}/medium/*.cpp
         ${CMAKE_SOURCE_DIR}/util/*.cpp
         ${CMAKE_SOURCE_DIR}/hard/*.cpp)
