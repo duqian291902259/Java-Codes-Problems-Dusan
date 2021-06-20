@@ -3,6 +3,7 @@
 //
 #include "Easy.h"
 #include <unordered_map>
+#include <map>
 
 using namespace std;
 
@@ -43,7 +44,32 @@ bool Easy::isPalindrome(int x) {
         return false;
     }
     int result = Easy::reverse(x);
-    LOGI(TAG, "easy_test reverse %d, %d", x, result)
-
     return x == result;
+}
+
+int Easy::romanToInt(string s) {
+    map<char, int> map;
+    map['I'] = 1;
+    map['V'] = 5;
+    map['X'] = 10;
+    map['L'] = 50;
+    map['C'] = 100;
+    map['D'] = 500;
+    map['M'] = 1000;
+    if (s == "") return 0;
+    int length = s.length();
+    int result = 0;
+    int currentIndex = 0;
+    for (int i = 0; i < length; ++i) {
+        if (i > 0 && i == currentIndex)continue;//少一次逻辑运算
+        int num = map[s[i]];
+        if (i < length - 1 && num < map[s[i + 1]]) {
+            //result -= num;
+            result += (map[s[i + 1]] - num);
+            currentIndex = i + 1;
+        } else {
+            result += num;
+        }
+    }
+    return result;
 }

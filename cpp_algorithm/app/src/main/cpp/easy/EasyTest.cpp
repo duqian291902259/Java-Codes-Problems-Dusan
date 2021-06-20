@@ -7,6 +7,9 @@
 
 using namespace std;
 
+/**
+ * 测试简单算法题
+ */
 void EasyTest::testTwoSum() {
     vector<int> vec = {2, 7, 11, 15};
     vector<int> find = Easy::twoSum(vec, 9);
@@ -24,7 +27,18 @@ int EasyTest::testReverseNum() {
 
 void EasyTest::testIsPalindrome() {
     bool isPalindrome = Easy::isPalindrome(121);
-    //LOGI(TAG, "isPalindrome=%s", isPalindrome)
+    string s = "false";
+    if (isPalindrome) {
+        s = "true";
+    }
+    LOGI(TAG, "isPalindrome=%s", s.c_str())
 }
 
+void EasyTest::testRomanToInt() {
+    int romanToInt = Easy::romanToInt("LVIII");
+    LOGI(TAG, "romanToInt=%d", romanToInt)
+
+    int romanToInt2 = Easy::romanToInt("MCMXCIV");
+    LOGI(TAG, "romanToInt2=%d", romanToInt2)
+}
 

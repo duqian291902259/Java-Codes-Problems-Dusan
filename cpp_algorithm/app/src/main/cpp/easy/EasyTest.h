@@ -7,6 +7,9 @@
 
 using namespace std;
 
+/**
+ * 测试简单算法题的头文件
+ */
 class EasyTest {
 public:
     static void testTwoSum();//声明
@@ -15,6 +18,5 @@ public:
 
     static void testIsPalindrome();
 
-    Easy *easy = new Easy();
-    Easy easy2 = Easy();
+    static void testRomanToInt();
 };
