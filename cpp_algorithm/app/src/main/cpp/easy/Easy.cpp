@@ -73,3 +73,34 @@ int Easy::romanToInt(string s) {
     }
     return result;
 }
+
+static string longestPrefix(string &string1, string &string2) {
+    int length = min(string1.size(), string2.size());
+    int index = 0;
+    for (int i = 0; i < length; i++) {
+        if (string1[i] == string2[i]) {
+            index++;
+        } else {
+            break;
+        }
+    }
+    if (index == 0) {
+        return "";
+    }
+    return string1.substr(0, index);
+}
+
+
+string Easy::longestCommonPrefix(vector<string> &strs) {
+    if (strs.empty()) {
+        return "";
+    }
+    string prefix = strs[0];
+    for (int i = 0; i < strs.size(); i++) {
+        prefix = longestPrefix(prefix, strs[i]);
+        if (prefix.empty()) {
+            return "";
+        }
+    }
+    return prefix;
+}

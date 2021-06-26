@@ -7,6 +7,15 @@
 
 using namespace std;
 
+class EasyTest2 {
+public:
+    static void longestCommonPrefix() {
+        vector<string> vec = {"flower", "flow", "flight"};
+        string prefix = Easy::longestCommonPrefix(vec);
+        LOGI(TAG, "longestCommonPrefix=%s", prefix.c_str())
+    }
+};
+
 /**
  * 测试简单算法题
  */
@@ -41,4 +50,11 @@ void EasyTest::testRomanToInt() {
     int romanToInt2 = Easy::romanToInt("MCMXCIV");
     LOGI(TAG, "romanToInt2=%d", romanToInt2)
 }
+
+void EasyTest::longestCommonPrefix() {
+    vector<string> vec = {"flower", "flow", "flight"};
+    string prefix = Easy::longestCommonPrefix(vec);
+    LOGI(TAG, "longestCommonPrefix=%s", prefix.c_str())
+}
+
 

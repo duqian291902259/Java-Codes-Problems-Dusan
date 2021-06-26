@@ -15,17 +15,20 @@ Java_site_duqian_cpp_1algorithm_MainActivity_stringFromJNI(
 
     std::string hello = "Hello from C++" + to_string(345);
     LOGI(TAG, "easy_test log %s", hello.c_str())
-    //1，twoSum
+    //1，1. 两数之和
     EasyTest::testTwoSum();
 
-    //2，twoSum
+    //2，7. 整数反转
     EasyTest::testReverseNum();
 
-    //3，回文数
+    //3，9. 回文数
     EasyTest::testIsPalindrome();
 
-    //11，罗马数字转整数
+    //4，13. 罗马数字转整数
     EasyTest::testRomanToInt();
+
+    //5,14. 最长公共前缀
+    EasyTest::longestCommonPrefix();
 
     return env->NewStringUTF(hello.c_str());
 }

@@ -19,4 +19,6 @@ public:
     static void testIsPalindrome();
 
     static void testRomanToInt();
+
+    static void longestCommonPrefix();
 };
