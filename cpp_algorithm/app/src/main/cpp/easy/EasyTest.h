@@ -21,4 +21,6 @@ public:
     static void testRomanToInt();
 
     static void longestCommonPrefix();
+
+    static void isValidPunctuation();
 };

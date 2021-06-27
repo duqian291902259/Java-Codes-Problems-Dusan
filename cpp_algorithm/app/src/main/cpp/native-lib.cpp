@@ -30,5 +30,8 @@ Java_site_duqian_cpp_1algorithm_MainActivity_stringFromJNI(
     //5,14. 最长公共前缀
     EasyTest::longestCommonPrefix();
 
+    //6,20. 有效的括号
+    EasyTest::isValidPunctuation();
+
     return env->NewStringUTF(hello.c_str());
 }

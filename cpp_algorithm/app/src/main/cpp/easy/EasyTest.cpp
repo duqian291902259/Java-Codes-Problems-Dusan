@@ -57,4 +57,13 @@ void EasyTest::longestCommonPrefix() {
     LOGI(TAG, "longestCommonPrefix=%s", prefix.c_str())
 }
 
+void EasyTest::isValidPunctuation() {
+    bool isValidPunctuation = Easy::isValidPunctuation("([])");
+    string s = "false";
+    if (isValidPunctuation) {
+        s = "true";
+    }
+    LOGI(TAG, "isValidPunctuation=%s", s.c_str())
+}
+
 

@@ -4,6 +4,7 @@
 #include "Easy.h"
 #include <unordered_map>
 #include <map>
+#include <stack>
 
 using namespace std;
 
@@ -103,4 +104,31 @@ string Easy::longestCommonPrefix(vector<string> &strs) {
         }
     }
     return prefix;
+}
+
+bool Easy::isValidPunctuation(string s) {
+    if (s.empty() || s.size() % 2 != 0) return false;
+    map<char, char> map1 = map<char, char>();
+    map1['('] = ')';
+    map1['{'] = '}';
+    map1['['] = ']';
+    unordered_map<char, char> map2 = {
+            {')', '('},
+            {']', '['},
+            {'}', '{'}
+    };
+    stack<char> sta;
+    for (char cha:s) {
+        if (cha == '[' || cha == '{' || cha == '(') {//匹配到左括号
+            sta.push(cha);//放入栈中
+        } else if (cha == ']' || cha == '}' || cha == ')') {//匹配到右括号
+            //if (map2[cha] == sta.top()) {
+            if (map1[sta.top()] == cha) {
+                sta.pop();
+            } else {
+                return false;
+            }
+        }
+    }
+    return sta.empty();
 }
