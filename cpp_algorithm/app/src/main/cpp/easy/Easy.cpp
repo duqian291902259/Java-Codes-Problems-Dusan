@@ -122,8 +122,8 @@ bool Easy::isValidPunctuation(string s) {
         if (cha == '[' || cha == '{' || cha == '(') {//匹配到左括号
             sta.push(cha);//放入栈中
         } else if (cha == ']' || cha == '}' || cha == ')') {//匹配到右括号
-            //if (map2[cha] == sta.top()) {
-            if (map1[sta.top()] == cha) {
+            //if (!sta.empty() && map2[cha] == sta.top()) {
+            if (!sta.empty() && map1[sta.top()] == cha) {
                 sta.pop();
             } else {
                 return false;
