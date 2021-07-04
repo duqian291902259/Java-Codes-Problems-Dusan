@@ -134,13 +134,13 @@ bool Easy::isValidPunctuation(string s) {
 }
 
 int Easy::removeDuplicates(vector<int> &nums) {
-    if (nums.size() <= 0) {
-        return 0;
+    if (nums.size() < 2) {
+        return nums.size();
     }
-    int index = 0;
+    /*int index = 0;
     for (int i = 0; i < nums.size(); i++) {
         int current = nums[i];
-        if (i < nums.size() - 1 && nums.size() > 1) {
+        if (i < nums.size() - 1) {
             int next = nums[i + 1];
             if (current != next) {
                 nums[index] = current;
@@ -150,5 +150,14 @@ int Easy::removeDuplicates(vector<int> &nums) {
             nums[index] = current;
         }
     }
-    return index + 1;
+    return index + 1;*/
+
+    int index = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        int current = nums[i];
+        if (current != nums[index]) {
+            nums[++index] = current;
+        }
+    }
+    return index++;
 }
