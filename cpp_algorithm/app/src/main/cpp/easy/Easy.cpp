@@ -132,3 +132,23 @@ bool Easy::isValidPunctuation(string s) {
     }
     return sta.empty();
 }
+
+int Easy::removeDuplicates(vector<int> &nums) {
+    if (nums.size() <= 0) {
+        return 0;
+    }
+    int index = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        int current = nums[i];
+        if (i < nums.size() - 1 && nums.size() > 1) {
+            int next = nums[i + 1];
+            if (current != next) {
+                nums[index] = current;
+                index++;
+            }
+        } else {
+            nums[index] = current;
+        }
+    }
+    return index + 1;
+}
