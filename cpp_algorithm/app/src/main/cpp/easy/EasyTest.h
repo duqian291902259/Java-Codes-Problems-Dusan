@@ -24,5 +24,7 @@ public:
 
     static void isValidPunctuation();
 
-    static void removeDuplicates();
+    static void testRemoveDuplicates();
+
+    static void testRemoveElement();
 };

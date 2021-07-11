@@ -161,3 +161,14 @@ int Easy::removeDuplicates(vector<int> &nums) {
     }
     return index++;
 }
+
+int Easy::removeElement(vector<int> &nums, int val) {
+    int index = 0;
+    for (int i = 0; i < nums.size(); i++) {
+        int current = nums[i];
+        if (current != val) {
+            nums[index++] = current;
+        }
+    }
+    return index++;
+}

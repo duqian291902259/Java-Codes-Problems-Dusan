@@ -33,8 +33,11 @@ Java_site_duqian_cpp_1algorithm_MainActivity_stringFromJNI(
     //6,20. 有效的括号
     EasyTest::isValidPunctuation();
 
-    //6,26. 删除有序数组中的重复项
-    EasyTest::removeDuplicates();
+    //7,26. 删除有序数组中的重复项
+    EasyTest::testRemoveDuplicates();
+
+    //8,27. 移除元素
+    EasyTest::testRemoveElement();
 
     return env->NewStringUTF(hello.c_str());
 }
