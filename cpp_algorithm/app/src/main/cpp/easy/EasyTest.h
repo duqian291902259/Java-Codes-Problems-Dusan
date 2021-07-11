@@ -27,4 +27,6 @@ public:
     static void testRemoveDuplicates();
 
     static void testRemoveElement();
+
+    static void testMergeTwoLists();
 };

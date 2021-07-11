@@ -11,6 +11,7 @@
 #include <string>
 //};
 #include "../util/logger.h"
+#include "common.h"
 
 using namespace std;
 
@@ -88,6 +89,9 @@ public:
         链接：https://leetcode-cn.com/problems/remove-element
      */
     static int removeElement(vector<int> &nums, int val);
+
+
+    static ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
 
 protected:
     int num = 0;
